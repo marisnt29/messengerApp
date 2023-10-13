@@ -1,0 +1,2537 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>2.7.10</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>com.example</groupId>\r\n\t<artifactId>ProiectPS</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name>ProiectPS</name>\r\n\t<description>Demo project for Spring Boot</description>\r\n\t<properties>\r\n\t\t<java.version>11</java.version>\r\n\t</properties>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> <version>8.0.25</version> </dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-webflux</artifactId>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.h2database</groupId>\r\n\t\t\t<artifactId>h2</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.springfox</groupId>\r\n\t\t\t<artifactId>springfox-swagger2</artifactId>\r\n\t\t\t<version>2.7.0</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.springfox</groupId>\r\n\t\t\t<artifactId>springfox-swagger-ui</artifactId>\r\n\t\t\t<version>2.7.0</version>\r\n\t\t</dependency>\r\n\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>io.projectreactor</groupId>\r\n\t\t\t<artifactId>reactor-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n        <dependency>\r\n            <groupId>org.springframework</groupId>\r\n            <artifactId>spring-web</artifactId>\r\n            <version>5.3.25</version>\r\n        </dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<version>1.18.24</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.mapstruct</groupId>\r\n\t\t\t<artifactId>mapstruct</artifactId>\r\n\t\t\t<version>1.5.3.Final</version>\r\n\t\t</dependency>\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>junit</groupId>\r\n\t\t\t<artifactId>junit</artifactId>\r\n\t\t\t<version>4.13.2</version>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n        <dependency>\r\n            <groupId>org.mockito</groupId>\r\n            <artifactId>mockito-core</artifactId>\r\n            <version>4.8.1</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.junit.jupiter</groupId>\r\n\t\t\t<artifactId>junit-jupiter-api</artifactId>\r\n\t\t\t<version>5.9.1</version>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-websocket</artifactId>\r\n        </dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-websocket</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-security</artifactId>\r\n\t\t</dependency>\r\n\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<excludes>\r\n\t\t\t\t\t</excludes>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.apache.maven.plugins</groupId>\r\n\t\t\t\t<artifactId>maven-compiler-plugin</artifactId>\r\n\t\t\t\t<version>3.5.1</version>\r\n\t\t\t\t<configuration>\r\n\t\t\t\t\t<source>1.8</source>\r\n\t\t\t\t\t<target>1.8</target>\r\n\t\t\t\t\t<annotationProcessorPaths>\r\n\t\t\t\t\t\t<path>\r\n\t\t\t\t\t\t\t<groupId>org.mapstruct</groupId>\r\n\t\t\t\t\t\t\t<artifactId>mapstruct-processor</artifactId>\r\n\t\t\t\t\t\t\t<version>1.5.3.Final</version>\r\n\t\t\t\t\t\t</path>\r\n\t\t\t\t\t\t<path>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t\t\t\t\t<version>1.18.24</version>\r\n\t\t\t\t\t\t</path>\r\n\t\t\t\t\t\t<path>\r\n\t\t\t\t\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t\t\t\t\t<artifactId>lombok-mapstruct-binding</artifactId>\r\n\t\t\t\t\t\t\t<version>0.2.0</version>\r\n\t\t\t\t\t\t</path>\r\n\t\t\t\t\t</annotationProcessorPaths>\r\n\t\t\t\t</configuration>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -9,9 +9,9 @@
+ 		<relativePath/> <!-- lookup parent from repository -->
+ 	</parent>
+ 	<groupId>com.example</groupId>
+-	<artifactId>ProiectPS</artifactId>
++	<artifactId>MessengerApp</artifactId>
+ 	<version>0.0.1-SNAPSHOT</version>
+-	<name>ProiectPS</name>
++	<name>MessengerApp</name>
+ 	<description>Demo project for Spring Boot</description>
+ 	<properties>
+ 		<java.version>11</java.version>
+@@ -73,11 +73,7 @@
+ 			<artifactId>mapstruct</artifactId>
+ 			<version>1.5.3.Final</version>
+ 		</dependency>
+-        <dependency>
+-            <groupId>junit</groupId>
+-            <artifactId>junit</artifactId>
+-            <scope>test</scope>
+-        </dependency>
++
+ 		<dependency>
+ 			<groupId>junit</groupId>
+ 			<artifactId>junit</artifactId>
+@@ -96,10 +92,6 @@
+ 			<version>5.9.1</version>
+ 			<scope>test</scope>
+ 		</dependency>
+-        <dependency>
+-            <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-websocket</artifactId>
+-        </dependency>
+ 		<dependency>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-starter-websocket</artifactId>
+Index: ProiectPS/pom.xml
+===================================================================
+diff --git a/ProiectPS/pom.xml b/ProiectPS/pom.xml
+deleted file mode 100644
+--- a/ProiectPS/pom.xml	
++++ /dev/null	
+@@ -1,149 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+-	<modelVersion>4.0.0</modelVersion>
+-	<parent>
+-		<groupId>org.springframework.boot</groupId>
+-		<artifactId>spring-boot-starter-parent</artifactId>
+-		<version>2.7.10</version>
+-		<relativePath/> <!-- lookup parent from repository -->
+-	</parent>
+-	<groupId>com.example</groupId>
+-	<artifactId>ProiectPS</artifactId>
+-	<version>0.0.1-SNAPSHOT</version>
+-	<name>ProiectPS</name>
+-	<description>Demo project for Spring Boot</description>
+-	<properties>
+-		<java.version>11</java.version>
+-	</properties>
+-	<dependencies>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+-		</dependency>
+-		<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> <version>8.0.25</version> </dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-web</artifactId>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-webflux</artifactId>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>com.h2database</groupId>
+-			<artifactId>h2</artifactId>
+-			<scope>runtime</scope>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>io.springfox</groupId>
+-			<artifactId>springfox-swagger2</artifactId>
+-			<version>2.7.0</version>
+-		</dependency>
+-		<dependency>
+-			<groupId>io.springfox</groupId>
+-			<artifactId>springfox-swagger-ui</artifactId>
+-			<version>2.7.0</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-test</artifactId>
+-			<scope>test</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>io.projectreactor</groupId>
+-			<artifactId>reactor-test</artifactId>
+-			<scope>test</scope>
+-		</dependency>
+-        <dependency>
+-            <groupId>org.springframework</groupId>
+-            <artifactId>spring-web</artifactId>
+-            <version>5.3.25</version>
+-        </dependency>
+-		<dependency>
+-			<groupId>org.projectlombok</groupId>
+-			<artifactId>lombok</artifactId>
+-			<version>1.18.24</version>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.mapstruct</groupId>
+-			<artifactId>mapstruct</artifactId>
+-			<version>1.5.3.Final</version>
+-		</dependency>
+-        <dependency>
+-            <groupId>junit</groupId>
+-            <artifactId>junit</artifactId>
+-            <scope>test</scope>
+-        </dependency>
+-		<dependency>
+-			<groupId>junit</groupId>
+-			<artifactId>junit</artifactId>
+-			<version>4.13.2</version>
+-			<scope>test</scope>
+-		</dependency>
+-        <dependency>
+-            <groupId>org.mockito</groupId>
+-            <artifactId>mockito-core</artifactId>
+-            <version>4.8.1</version>
+-            <scope>test</scope>
+-        </dependency>
+-		<dependency>
+-			<groupId>org.junit.jupiter</groupId>
+-			<artifactId>junit-jupiter-api</artifactId>
+-			<version>5.9.1</version>
+-			<scope>test</scope>
+-		</dependency>
+-        <dependency>
+-            <groupId>org.springframework.boot</groupId>
+-            <artifactId>spring-boot-starter-websocket</artifactId>
+-        </dependency>
+-		<dependency>
+-			<groupId>org.springframework.boot</groupId>
+-			<artifactId>spring-boot-starter-websocket</artifactId>
+-		</dependency>
+-
+-	</dependencies>
+-
+-	<build>
+-		<plugins>
+-			<plugin>
+-				<groupId>org.springframework.boot</groupId>
+-				<artifactId>spring-boot-maven-plugin</artifactId>
+-				<configuration>
+-					<excludes>
+-					</excludes>
+-				</configuration>
+-			</plugin>
+-			<plugin>
+-				<groupId>org.apache.maven.plugins</groupId>
+-				<artifactId>maven-compiler-plugin</artifactId>
+-				<version>3.5.1</version>
+-				<configuration>
+-					<source>1.8</source>
+-					<target>1.8</target>
+-					<annotationProcessorPaths>
+-						<path>
+-							<groupId>org.mapstruct</groupId>
+-							<artifactId>mapstruct-processor</artifactId>
+-							<version>1.5.3.Final</version>
+-						</path>
+-						<path>
+-							<groupId>org.projectlombok</groupId>
+-							<artifactId>lombok</artifactId>
+-							<version>1.18.24</version>
+-						</path>
+-						<path>
+-							<groupId>org.projectlombok</groupId>
+-							<artifactId>lombok-mapstruct-binding</artifactId>
+-							<version>0.2.0</version>
+-						</path>
+-					</annotationProcessorPaths>
+-				</configuration>
+-			</plugin>
+-		</plugins>
+-	</build>
+-
+-</project>
+Index: ProiectPS/src/main/java/com/example/ProiectPS/dto/UserDTO.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/dto/UserDTO.java b/ProiectPS/src/main/java/com/example/ProiectPS/dto/UserDTO.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/dto/UserDTO.java	
++++ /dev/null	
+@@ -1,16 +0,0 @@
+-package com.example.ProiectPS.dto;
+-
+-import lombok.AllArgsConstructor;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-@Data
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class UserDTO {
+-    private Long idDto;
+-    private String usernameDto;
+-    private String passwordDto;
+-    private Boolean online;
+-
+-}
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: ProiectPS/src/main/java/com/example/ProiectPS/controllers/UserController.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/UserController.java b/ProiectPS/src/main/java/com/example/ProiectPS/controllers/UserController.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/UserController.java	
++++ /dev/null	
+@@ -1,77 +0,0 @@
+-package com.example.ProiectPS.controllers;
+-
+-import com.example.ProiectPS.dto.UserDTO;
+-import com.example.ProiectPS.service.UserServiceImpl;
+-import io.swagger.annotations.ApiOperation;
+-import io.swagger.annotations.ApiParam;
+-import org.springframework.http.HttpStatus;
+-import org.springframework.http.ResponseEntity;
+-import org.springframework.web.bind.annotation.*;
+-
+-import java.util.List;
+-
+-@RestController
+-@RequestMapping("/users")
+-public class UserController {
+-
+-    private final UserServiceImpl userService;
+-
+-
+-    public UserController(UserServiceImpl userService) {
+-        this.userService = userService;
+-    }
+-
+-    @ApiOperation(value = "Returns a list of all users")
+-    @GetMapping("/")
+-    public List<UserDTO> getAllUsers() {
+-        return userService.getAllUsers();
+-    }
+-
+-    @ApiOperation(value = "Return a user based on his id")
+-    @GetMapping("/{id}")
+-    public UserDTO getUserById(@ApiParam("Id of the user you want to retrieve") @PathVariable Long id) {
+-        return userService.getUserById(id);
+-    }
+-
+-    @ApiOperation(value = "Register an user")
+-    @PostMapping("/register")
+-    public ResponseEntity saveUser(@ApiParam("Body of an user") @RequestBody UserDTO user) {
+-        return ResponseEntity.status(HttpStatus.OK).body(userService.saveUser(user));
+-
+-    }
+-
+-    @ApiOperation(value = "Update an user")
+-    @PutMapping("/{id}")
+-    public void updateUser(@ApiParam("Body of an user with modifications") @RequestBody UserDTO user, @ApiParam("The id of the user  you want to modify") @PathVariable Long id) {
+-        user.setIdDto(id);
+-        userService.updateUser(user);
+-    }
+-
+-    @ApiOperation(value = "Logs out an user / Changes status to offline")
+-    @PutMapping("/logout/{id}")
+-    public void logout(@ApiParam("Body the user with moddified status") @RequestBody UserDTO user, @ApiParam("The id of the user  you want to modify") @PathVariable Long id) {
+-        user.setIdDto(id);
+-        userService.logout(user);
+-    }
+-
+-
+-
+-    @ApiOperation(value = "Delete an user")
+-    @DeleteMapping("/{id}")
+-    public void deleteUser(@ApiParam("id of the user you want to delete") @PathVariable Long id) {
+-        UserDTO user = userService.getUserById(id);
+-        userService.deleteUser(user);
+-    }
+-
+-    @ApiOperation(value = "Logins an user and returns response entity")
+-    @PostMapping("/login")
+-    public ResponseEntity login(@ApiParam("Body of  user with credentials you want to login") @RequestBody UserDTO user) {
+-        return ResponseEntity.status(HttpStatus.OK).body(userService.login(user.getUsernameDto(), user.getPasswordDto()));
+-    }
+-
+-    @GetMapping("/export/{userID}")
+-    public ResponseEntity exportUserDetails(@PathVariable Long userID, @RequestParam String fileType) {
+-        return ResponseEntity.ok(userService.exportUserDetails(userID, fileType));
+-    }
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/repository/UserRepository.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/repository/UserRepository.java b/ProiectPS/src/main/java/com/example/ProiectPS/repository/UserRepository.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/repository/UserRepository.java	
++++ /dev/null	
+@@ -1,21 +0,0 @@
+-package com.example.ProiectPS.repository;
+-
+-import com.example.ProiectPS.model.User;
+-import org.springframework.context.annotation.Bean;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.data.jpa.repository.Query;
+-import org.springframework.stereotype.Repository;
+-
+-import java.util.Optional;
+-
+-@Repository
+-public interface UserRepository extends JpaRepository<User, Long> {
+-
+-
+-    @Query("select u from User u where u.username = ?1 and u.password = ?2")
+-    Optional<User> findByUsernameAndPassword(String username, String password);
+-
+-    @Query("select u from User u where u.username = ?1")
+-    Optional<User> findByUsername(String username);
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/ProiectPsApplication.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/ProiectPsApplication.java b/ProiectPS/src/main/java/com/example/ProiectPS/ProiectPsApplication.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/ProiectPsApplication.java	
++++ /dev/null	
+@@ -1,22 +0,0 @@
+-package com.example.ProiectPS;
+-
+-import com.example.ProiectPS.controllers.UserController;
+-import org.springframework.boot.SpringApplication;
+-import org.springframework.boot.autoconfigure.SpringBootApplication;
+-import org.springframework.boot.autoconfigure.domain.EntityScan;
+-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+-import org.springframework.context.annotation.ComponentScan;
+-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+-
+-@SpringBootApplication
+-@ComponentScan({"com.example.ProiectPS.service"})
+-@EntityScan("com.example.ProiectPS.model")
+-@EnableJpaRepositories("com.example.ProiectPS.repository")
+-@ComponentScan(basePackageClasses = UserController.class)
+-public class ProiectPsApplication extends SpringBootServletInitializer {
+-
+-	public static void main(String[] args) {
+-		SpringApplication.run(ProiectPsApplication.class, args);
+-	}
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/model/Conversation.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/model/Conversation.java b/ProiectPS/src/main/java/com/example/ProiectPS/model/Conversation.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/model/Conversation.java	
++++ /dev/null	
+@@ -1,39 +0,0 @@
+-package com.example.ProiectPS.model;
+-
+-import com.sun.istack.NotNull;
+-import lombok.*;
+-
+-import javax.persistence.*;
+-import java.util.*;
+-@AllArgsConstructor
+-@NoArgsConstructor
+-@Setter
+-@Getter
+-
+-@Entity
+-public class Conversation {
+-
+-    @Id
+-    @GeneratedValue
+-    private Long id;
+-
+-    @ManyToMany(cascade={CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE})
+-    private List<User> users;
+-
+-
+-
+-    private Date dateStarted;
+-
+-
+-    public static Conversation between(List<User> users) {
+-        if (users == null || users.size() < 2) {
+-            throw new IllegalArgumentException("There should be at least 2 users to the conversation");
+-        }
+-        Conversation conversation = new Conversation();
+-        conversation.setUsers(users);
+-        conversation.setDateStarted(new Date());
+-        return conversation;
+-    }
+-
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/controllers/MessageController.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/MessageController.java b/ProiectPS/src/main/java/com/example/ProiectPS/controllers/MessageController.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/MessageController.java	
++++ /dev/null	
+@@ -1,87 +0,0 @@
+-package com.example.ProiectPS.controllers;
+-
+-import com.example.ProiectPS.dto.MessageDTO;
+-import com.example.ProiectPS.service.MessageService;
+-import io.swagger.annotations.ApiOperation;
+-import io.swagger.annotations.ApiParam;
+-import org.springframework.http.HttpStatus;
+-import org.springframework.http.ResponseEntity;
+-import org.springframework.web.bind.annotation.*;
+-
+-import java.util.Date;
+-import java.util.List;
+-
+-@RestController
+-@RequestMapping("/messages")
+-public class MessageController {
+-
+-    private final MessageService messageService;
+-
+-    public MessageController(MessageService messageService) {
+-        this.messageService = messageService;
+-    }
+-
+-    @ApiOperation(value = "Returns a list of all  messages ")
+-    @GetMapping("/")
+-    public List<MessageDTO> getAllMessages() {
+-        return messageService.getAllMessages();
+-    }
+-
+-    @ApiOperation(value = "Returns a message based on  ID")
+-    @GetMapping("/{id}")
+-    public MessageDTO getMessageById(@ApiParam("Id of the message you want to retrieve") @PathVariable Long id) {
+-        return messageService.getMessageById(id);
+-    }
+-    @ApiOperation(value = "Returns a list of messages  based on  conversation ID")
+-    @GetMapping("/conversation/{conversationId}")
+-    public List<MessageDTO> getAllMessagesByConversationId(@ApiParam("Id of the conversation you want to view messages from")@PathVariable Long conversationId) {
+-        return messageService.getAllMessagesByConversationId(conversationId);
+-    }
+-
+-    @ApiOperation(value = "Sends a message from an user to another")
+-    @PostMapping("/sendfrom/{fromId}/to/{toId}")
+-    public ResponseEntity<String> sendMessageToUser(@ApiParam("Id of user sending the message")@PathVariable Long fromId, @ApiParam("Id of user receiving the message")@PathVariable Long toId, @ApiParam("Body of the message,containing a string only")@RequestBody MessageDTO messageDTO) {
+-        try {
+-
+-            messageService.sendMessageToUser(messageDTO, fromId, toId);
+-            return ResponseEntity.ok("Message sent successfully!");
+-        } catch (IllegalArgumentException e) {
+-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid message data");
+-        }
+-    }
+-
+-    @ApiOperation(value = "Sends a message from an user in a conversation")
+-    @PostMapping("/sendfrom/{fromId}/in/{conversationId}")
+-    public ResponseEntity<String> sendMessage(@ApiParam("Id of user sending the message")@PathVariable Long fromId,@ApiParam("Id of the conversation ") @PathVariable Long conversationId,@ApiParam("Body of the message,containing a string only") @RequestBody MessageDTO messageDTO) {
+-        try {
+-
+-            messageService.sendMessage(messageDTO, fromId, conversationId);
+-            return ResponseEntity.ok("Message sent successfully!");
+-        } catch (IllegalArgumentException e) {
+-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid message data");
+-        }
+-    }
+-    @ApiOperation(value = "Updates a message ")
+-    @PutMapping("/{id}")
+-    public ResponseEntity<String> updateMessage(@ApiParam("Body of the message")@RequestBody MessageDTO messageDTO, @ApiParam("Id of the message you want to modify ")@PathVariable Long id) {
+-        try {
+-            messageDTO.setId(id);
+-            messageService.updateMessage(messageDTO);
+-            return ResponseEntity.ok("Message updated successfully!");
+-        } catch (IllegalArgumentException e) {
+-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid message data");
+-        }
+-    }
+-
+-    @ApiOperation(value = "Deletes a message ")
+-    @DeleteMapping("/{id}")
+-    public ResponseEntity<String> deleteMessage(@ApiParam("Id of the message you want to delete ")@PathVariable Long id) {
+-        try {
+-            MessageDTO messageDTO = messageService.getMessageById(id);
+-            messageService.deleteMessage(messageDTO);
+-            return ResponseEntity.ok("Message deleted successfully!");
+-        } catch (IllegalArgumentException e) {
+-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid message ID");
+-        }
+-    }
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/exporter/XMLFileExporter.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/XMLFileExporter.java b/ProiectPS/src/main/java/com/example/ProiectPS/exporter/XMLFileExporter.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/XMLFileExporter.java	
++++ /dev/null	
+@@ -1,32 +0,0 @@
+-package com.example.ProiectPS.exporter;
+-
+-import javax.xml.bind.JAXBContext;
+-import javax.xml.bind.JAXBException;
+-import javax.xml.bind.Marshaller;
+-import java.io.StringWriter;
+-
+-public class XMLFileExporter implements FileExporter {
+-    @Override
+-    public String exportData(Object object) {
+-        String xmlContent = null;
+-        try {
+-
+-            JAXBContext jaxbContext = JAXBContext.newInstance(object.getClass());
+-
+-            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+-
+-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+-
+-            StringWriter sw = new StringWriter();
+-
+-            jaxbMarshaller.marshal(object, sw);
+-
+-            xmlContent = sw.toString();
+-        } catch (JAXBException e) {
+-            e.printStackTrace();
+-        }
+-
+-        return xmlContent;
+-    }
+-}
+-
+Index: ProiectPS/src/main/java/com/example/ProiectPS/repository/ConversationRepository.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/repository/ConversationRepository.java b/ProiectPS/src/main/java/com/example/ProiectPS/repository/ConversationRepository.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/repository/ConversationRepository.java	
++++ /dev/null	
+@@ -1,18 +0,0 @@
+-package com.example.ProiectPS.repository;
+-
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.User;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.data.jpa.repository.Query;
+-import org.springframework.stereotype.Repository;
+-
+-
+-import java.util.List;
+-import java.util.stream.Stream;
+-@Repository
+-public interface ConversationRepository extends JpaRepository<Conversation, Long> {
+-
+-
+-
+-}
+-
+Index: ProiectPS/src/main/java/com/example/ProiectPS/controllers/ConversationController.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/ConversationController.java b/ProiectPS/src/main/java/com/example/ProiectPS/controllers/ConversationController.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/controllers/ConversationController.java	
++++ /dev/null	
+@@ -1,62 +0,0 @@
+-package com.example.ProiectPS.controllers;
+-
+-import com.example.ProiectPS.dto.ConversationDTO;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.service.ConversationServiceImpl;
+-import io.swagger.annotations.ApiOperation;
+-import io.swagger.annotations.ApiParam;
+-import org.springframework.web.bind.annotation.*;
+-
+-import java.util.List;
+-
+-@RestController
+-@RequestMapping("/conversations")
+-public class ConversationController {
+-
+-    private final ConversationServiceImpl conversationService;
+-
+-    public ConversationController(ConversationServiceImpl conversationService) {
+-        this.conversationService = conversationService;
+-    }
+-
+-    @ApiOperation(value = "Return a list of all conversations ")
+-    @GetMapping("/")
+-    public List<ConversationDTO> getAllConversations() {
+-        return conversationService.getAllConversations();
+-    }
+-
+-        @ApiOperation(value = "Return a list of all conversations from an user ")
+-        @GetMapping("/user/{id}")
+-        public List<ConversationDTO> getAllConversationsByUserId(@ApiParam("id of the user") @PathVariable Long id) {
+-            return conversationService.getAllConversationByUserId(id);
+-        }
+-    @ApiOperation(value = "Return a  conversation based on id ")
+-    @GetMapping("/{id}")
+-    public ConversationDTO getConversationById(@ApiParam("id of the conversation")@PathVariable Long id) {
+-
+-        return conversationService.getConversationById(id);
+-    }
+-    @ApiOperation(value = " Creates an conversation and saves it in database ")
+-    @PostMapping("/save")
+-    public void saveConversation(@ApiParam("body of the conversation")@RequestBody ConversationDTO conversationDto) {
+-           conversationService.saveConversation(conversationDto);
+-    }
+-    @ApiOperation(value = " Updates an conversation ")
+-    @PutMapping("/{id}")
+-    public void updateConversation(@ApiParam("body of the conversation")@RequestBody ConversationDTO conversationDto,@ApiParam("id of conversation you want to update")@PathVariable Long id) {
+-        conversationDto.setId(id);
+-
+-        conversationService.updateConversation(conversationDto);
+-    }
+-    @ApiOperation(value = " Deletes an conversation ")
+-    @DeleteMapping("/{id}")
+-    public void deleteConversation(@ApiParam("id of the conversation")@PathVariable Long id) {
+-        ConversationDTO conversation = conversationService.getConversationById(id);
+-
+-        conversationService.deleteConversation(conversation);
+-    }
+-
+-
+-}
+-
+Index: .idea/dataSources.xml
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+deleted file mode 100644
+--- a/.idea/dataSources.xml	
++++ /dev/null	
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+-    <data-source source="LOCAL" name="messdb@localhost" uuid="ee748469-a5a4-4cb8-b190-710da75099ec">
+-      <driver-ref>mysql.8</driver-ref>
+-      <synchronize>true</synchronize>
+-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+-      <jdbc-url>jdbc:mysql://localhost:3306/messdb</jdbc-url>
+-      <working-dir>$ProjectFileDir$</working-dir>
+-    </data-source>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/repository/MessageRepository.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/repository/MessageRepository.java b/ProiectPS/src/main/java/com/example/ProiectPS/repository/MessageRepository.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/repository/MessageRepository.java	
++++ /dev/null	
+@@ -1,15 +0,0 @@
+-package com.example.ProiectPS.repository;
+-
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.Message;
+-import org.springframework.data.jpa.repository.JpaRepository;
+-import org.springframework.stereotype.Repository;
+-
+-import java.util.List;
+-import java.util.stream.Stream;
+-@Repository
+-public interface MessageRepository extends JpaRepository<Message, Long> {
+-
+-
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/dto/MessageDTO.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/dto/MessageDTO.java b/ProiectPS/src/main/java/com/example/ProiectPS/dto/MessageDTO.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/dto/MessageDTO.java	
++++ /dev/null	
+@@ -1,21 +0,0 @@
+-package com.example.ProiectPS.dto;
+-
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.User;
+-import lombok.AllArgsConstructor;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.util.Date;
+-
+-@Data
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class MessageDTO {
+-    private Long id;
+-    private String content;
+-    private String from;
+-    private Date dateSent;
+-    private Date dateDelivered;
+-    private Date dateViewed;
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/configurations/SwaggerConfig.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SwaggerConfig.java b/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SwaggerConfig.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SwaggerConfig.java	
++++ /dev/null	
+@@ -1,24 +0,0 @@
+-package com.example.ProiectPS.configurations;
+-
+-
+-import org.springframework.context.annotation.Bean;
+-import org.springframework.context.annotation.Configuration;
+-import springfox.documentation.builders.PathSelectors;
+-import springfox.documentation.builders.RequestHandlerSelectors;
+-import springfox.documentation.spi.DocumentationType;
+-import springfox.documentation.spring.web.plugins.Docket;
+-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+-
+-@Configuration
+-@EnableSwagger2
+-public class SwaggerConfig {
+-    @Bean
+-    public Docket api() {
+-        return new Docket(DocumentationType.SWAGGER_2)
+-                .useDefaultResponseMessages(false)
+-                .select()
+-                .apis(RequestHandlerSelectors.basePackage("com.example.ProiectPS"))
+-                .paths(PathSelectors.any())
+-                .build();
+-    }
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/exporter/FileExporter.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/FileExporter.java b/ProiectPS/src/main/java/com/example/ProiectPS/exporter/FileExporter.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/FileExporter.java	
++++ /dev/null	
+@@ -1,6 +0,0 @@
+-package com.example.ProiectPS.exporter;
+-
+-public interface FileExporter {
+-    String exportData (Object object);
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/UserServiceImpl.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/UserServiceImpl.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/UserServiceImpl.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/UserServiceImpl.java	
++++ /dev/null	
+@@ -1,144 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.UserDTO;
+-import com.example.ProiectPS.exporter.FileExporter;
+-import com.example.ProiectPS.exporter.TXTFileExporter;
+-import com.example.ProiectPS.exporter.XMLFileExporter;
+-import com.example.ProiectPS.mappers.UserMapper;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import com.example.ProiectPS.validators.PasswordValidator;
+-import org.mapstruct.factory.Mappers;
+-import org.springframework.beans.factory.annotation.Autowired;
+-import org.springframework.http.HttpStatus;
+-import org.springframework.messaging.simp.SimpMessagingTemplate;
+-import org.springframework.stereotype.Service;
+-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+-import org.springframework.web.server.ResponseStatusException;
+-
+-import javax.transaction.Transactional;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.stream.Collectors;
+-
+-@Transactional
+-@Service
+-public class UserServiceImpl implements UserService {
+-
+-    private final UserRepository userRepository;
+-
+-    private final ConversationRepository conversationRepository;
+-    private final UserMapper mapper = Mappers.getMapper(UserMapper.class);
+-
+-    private final SimpMessagingTemplate template;
+-    BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+-
+-
+-    @Autowired
+-    public UserServiceImpl(UserRepository userRepository, ConversationRepository conversationRepository, SimpMessagingTemplate template) {
+-        this.userRepository = userRepository;
+-        this.conversationRepository = conversationRepository;
+-        this.template = template;
+-    }
+-
+-    public UserDTO getUserById(Long id) {
+-        User user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+-
+-        return mapper.toDTO(user);
+-    }
+-
+-    @Override
+-    public UserDTO login(String username, String password) {
+-        User user = userRepository.findByUsername(username).orElseThrow(() -> new IllegalArgumentException("Invalid user credentials:"));
+-
+-        if(!bCryptPasswordEncoder.matches(password,user.getPassword())){
+-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"PASSWORD DON'T MATCH!");
+-        }
+-
+-        this.template.convertAndSend("/topic/socket/users",
+-                 username + " went online!");
+-
+-        return mapper.toDTO(user);
+-    }
+-
+-    @Override
+-    public String exportUserDetails(Long userID, String fileType) {
+-        User user = userRepository.findById(userID).orElseThrow(() -> new IllegalArgumentException("Invalid user ID:" + userID));
+-        FileExporter fileExporter;
+-        if (fileType.equals("xml")) {
+-            fileExporter = new XMLFileExporter();
+-            return fileExporter.exportData(user);
+-        } else if (fileType.equals("txt")) {
+-            fileExporter = new TXTFileExporter();
+-            return fileExporter.exportData(user);
+-        }
+-        return null;
+-    }
+-
+-    @Override
+-    public UserDTO saveUser(UserDTO user) {
+-
+-        if (PasswordValidator.isValid(user.getPasswordDto())) {
+-            User newUser = new User(user.getIdDto(), user.getUsernameDto(), user.getPasswordDto(), false);
+-
+-            String encryptedPassword = bCryptPasswordEncoder.encode(newUser.getPassword());
+-            newUser.setPassword(encryptedPassword);
+-            userRepository.save(newUser);
+-            return mapper.toDTO(newUser);
+-        } else throw new IllegalArgumentException("Invalid password!");
+-
+-    }
+-
+-    @Override
+-    public void updateUser(UserDTO user) {
+-        User existingUser = userRepository.findById(user.getIdDto()).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + user.getIdDto()));
+-        existingUser.setUsername(user.getUsernameDto());
+-        existingUser.setPassword(user.getPasswordDto());
+-        existingUser.setOnline(user.getOnline());
+-        userRepository.save(existingUser);
+-    }
+-
+-    @Override
+-    public void deleteUser(UserDTO user) {
+-        User existingUser = userRepository.findById(user.getIdDto()).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + user.getIdDto()));
+-        List<Conversation> userConversations = new ArrayList<>();
+-        userConversations = conversationRepository.findAll().stream().filter(conv -> conv.getUsers().contains(existingUser)).collect(Collectors.toList());
+-        for (Conversation conversation : userConversations) {
+-            conversation.getUsers().remove(existingUser);
+-            if (conversation.getUsers().size() < 2) {
+-                conversationRepository.delete(conversation);
+-            } else {
+-                conversationRepository.save(conversation);
+-            }
+-        }
+-
+-        userRepository.delete(existingUser);
+-
+-    }
+-
+-    @Override
+-    public List<UserDTO> getAllUsers() {
+-        List<User> users = userRepository.findAll();
+-        List<UserDTO> usersDTOs = new ArrayList<>();
+-        for (User user : users) {
+-            usersDTOs.add(mapper.toDTO(user));
+-        }
+-        return usersDTOs;
+-    }
+-
+-
+-    //just an update with new status
+-    public void logout(UserDTO user) {
+-        User existingUser = userRepository.findById(user.getIdDto()).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + user.getIdDto()));
+-        existingUser.setUsername(user.getUsernameDto());
+-        existingUser.setPassword(user.getPasswordDto());
+-        existingUser.setOnline(Boolean.FALSE);
+-        this.template.convertAndSend("/topic/socket/users",
+-                 existingUser.getUsername() + " went offline!");
+-        userRepository.save(existingUser);
+-    }
+-
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/configurations/SecurityConfig.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SecurityConfig.java b/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SecurityConfig.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/SecurityConfig.java	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-package com.example.ProiectPS.configurations;
+-
+-import org.springframework.context.annotation.Configuration;
+-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+-
+-@Configuration
+-@EnableWebSecurity
+-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+-
+-    @Override
+-    protected void configure(HttpSecurity http) throws Exception {
+-        http
+-                .csrf().disable() // Disable CSRF for simplicity, handle it properly in production
+-                .authorizeRequests()
+-                .antMatchers("/**").permitAll(); // Allow all requests without authentication
+-    }
+-}
+Index: ProiectPS/src/test/java/com/example/ProiectPS/service/MessageServiceImplTest.java
+===================================================================
+diff --git a/ProiectPS/src/test/java/com/example/ProiectPS/service/MessageServiceImplTest.java b/ProiectPS/src/test/java/com/example/ProiectPS/service/MessageServiceImplTest.java
+deleted file mode 100644
+--- a/ProiectPS/src/test/java/com/example/ProiectPS/service/MessageServiceImplTest.java	
++++ /dev/null	
+@@ -1,159 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.MessageDTO;
+-import com.example.ProiectPS.mappers.MessageMapper;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.Message;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.MessageRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.junit.runner.RunWith;
+-import org.mapstruct.factory.Mappers;
+-import org.mockito.Mock;
+-import org.mockito.Mockito;
+-import org.mockito.MockitoAnnotations;
+-import org.mockito.junit.MockitoJUnitRunner;
+-
+-import java.util.*;
+-
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.junit.jupiter.api.Assertions.assertNotNull;
+-import static org.mockito.Mockito.when;
+-
+-@RunWith(MockitoJUnitRunner.class)
+-class MessageServiceImplTest {
+-
+-    private MessageService messageService;
+-    @Mock
+-    private MessageRepository messageRepository;
+-    @Mock
+-    private ConversationRepository conversationRepository;
+-    @Mock
+-    private UserRepository userRepository;
+-
+-    MessageMapper mapper = Mappers.getMapper(MessageMapper.class);
+-
+-    private User user1;
+-    private User user2;
+-    private Conversation conversation;
+-    private Message message;
+-
+-    @BeforeEach
+-    void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-        messageService = new MessageServiceImpl(messageRepository, conversationRepository, userRepository);
+-
+-        user1 = new User();
+-        user1.setId(1L);
+-        user1.setUsername("user1");
+-        user2 = new User();
+-        user2.setId(2L);
+-        user2.setUsername("user2");
+-
+-        conversation = new Conversation();
+-        conversation.setId(1L);
+-        conversation.setUsers(Arrays.asList(user1, user2));
+-
+-        message = new Message();
+-        message.setId(1L);
+-        message.setFrom(user1);
+-        message.setConversation(conversation);
+-        message.setContent("Hello");
+-        message.setDateSent(new Date());
+-    }
+-
+-    @Test
+-    void testGetAllMessages() {
+-        List<Message> messages = new ArrayList<>();
+-        messages.add(new Message(1L, new User(), new Conversation(), "Hello !", new Date(), null, null));
+-        when(messageRepository.findAll()).thenReturn(messages);
+-
+-        List<MessageDTO> messageDTOs = messageService.getAllMessages();
+-
+-        assertNotNull(messageDTOs);
+-        assertEquals(messages.size(), messageDTOs.size());
+-        assertEquals(messages.get(0).getContent(), messageDTOs.get(0).getContent());
+-    }
+-
+-    @Test
+-    void testGetMessageById() {
+-        Message message = new Message(1L, new User(), new Conversation(), "Hello world!", new Date(), null, null);
+-        when(messageRepository.findById(1L)).thenReturn(Optional.of(message));
+-
+-        MessageDTO messageDTO = messageService.getMessageById(1L);
+-
+-        assertNotNull(messageDTO);
+-        assertEquals(message.getContent(), messageDTO.getContent());
+-    }
+-
+-    @Test
+-    public void testSendMessage() {
+-        MessageDTO messageDTO = new MessageDTO();
+-        messageDTO.setContent("Hello");
+-        messageDTO.setFrom(user1.getUsername());
+-
+-
+-        Mockito.when(userRepository.findById(user1.getId())).thenReturn(Optional.of(user1));
+-        Mockito.when(conversationRepository.findById(conversation.getId())).thenReturn(Optional.of(conversation));
+-
+-        Message savedMessage = new Message();
+-        savedMessage.setId(1L);
+-        savedMessage.setFrom(user1);
+-        savedMessage.setConversation(conversation);
+-        savedMessage.setContent("Hello");
+-        savedMessage.setDateSent(new Date());
+-        savedMessage.setDateDelivered(new Date());
+-
+-        Mockito.when(messageRepository.save(message)).thenReturn(savedMessage);
+-
+-        MessageDTO result = messageService.sendMessage(messageDTO, user1.getId(), conversation.getId());
+-
+-        assertNotNull(result);
+-        assertEquals(result.getContent(), savedMessage.getContent());
+-        assertEquals(result.getFrom(), savedMessage.getFrom().getUsername());
+-
+-
+-        Mockito.verify(userRepository).findById(user1.getId());
+-        Mockito.verify(conversationRepository).findById(conversation.getId());
+-        Mockito.verify(messageRepository).save(Mockito.any());
+-    }
+-
+-    @Test
+-    public void testSendMessageToUser() {
+-        MessageDTO messageDTO = new MessageDTO();
+-        messageDTO.setContent("Hello");
+-        messageDTO.setFrom(user1.getUsername());
+-
+-        Mockito.when(userRepository.findById(user1.getId())).thenReturn(Optional.of(user1));
+-        Mockito.when(userRepository.findById(user2.getId())).thenReturn(Optional.of(user2));
+-
+-        Conversation newConversation = new Conversation();
+-        newConversation.setId(2L);
+-        newConversation.setUsers(Arrays.asList(user1, user2));
+-
+-        Mockito.when(conversationRepository.findAll()).thenReturn(Arrays.asList(conversation));
+-        Mockito.when(conversationRepository.save(Mockito.any())).thenReturn(newConversation);
+-
+-        Message savedMessage = new Message();
+-        savedMessage.setId(2L);
+-        savedMessage.setFrom(user1);
+-        savedMessage.setConversation(newConversation);
+-        savedMessage.setContent("Hello");
+-        savedMessage.setDateSent(new Date());
+-        savedMessage.setDateDelivered(new Date());
+-
+-        Mockito.when(messageRepository.save(Mockito.any())).thenReturn(savedMessage);
+-
+-        messageService.sendMessageToUser(messageDTO, user1.getId(), user2.getId());
+-
+-        Mockito.verify(userRepository).findById(user1.getId());
+-        Mockito.verify(userRepository).findById(user2.getId());
+-        Mockito.verify(conversationRepository).findAll();
+-
+-    }
+-
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/src/test/java/com/example/ProiectPS/service/UserServiceImplTest.java
+===================================================================
+diff --git a/ProiectPS/src/test/java/com/example/ProiectPS/service/UserServiceImplTest.java b/ProiectPS/src/test/java/com/example/ProiectPS/service/UserServiceImplTest.java
+deleted file mode 100644
+--- a/ProiectPS/src/test/java/com/example/ProiectPS/service/UserServiceImplTest.java	
++++ /dev/null	
+@@ -1,150 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.UserDTO;
+-import com.example.ProiectPS.mappers.UserMapper;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.junit.runner.RunWith;
+-import org.mockito.InjectMocks;
+-import org.mockito.Mock;
+-import org.mockito.Mockito;
+-import org.mockito.MockitoAnnotations;
+-import org.mockito.junit.MockitoJUnitRunner;
+-
+-import java.util.Arrays;
+-import java.util.List;
+-import java.util.Optional;
+-
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.junit.jupiter.api.Assertions.assertThrows;
+-import static org.mockito.Mockito.*;
+-
+-@RunWith(MockitoJUnitRunner.class)
+-class UserServiceImplTest {
+-
+-    private UserServiceImpl userService;
+-
+-
+-
+-    @Mock
+-    private UserRepository userRepository;
+-
+-    @Mock
+-    private ConversationRepository conversationRepository;
+-
+-    @Mock
+-    private UserMapper mapper;
+-
+-    @BeforeEach
+-    public void setup() {
+-
+-        MockitoAnnotations.openMocks(this);
+-        userService = new UserServiceImpl(userRepository,conversationRepository);
+-
+-    }
+-
+-    @Test
+-    void createUser_shouldCreateAndInsertUserInDB() {
+-
+-        UserDTO userDto = new UserDTO();
+-        User user = new User();
+-        userDto.setUsernameDto("test");
+-        user.setUsername(userDto.getUsernameDto());
+-
+-
+-        when(mapper.toEntity(userDto)).thenReturn(user);
+-        when(mapper.toDTO(user)).thenReturn(userDto);
+-        when(userRepository.save(user)).thenReturn(user);
+-
+-        UserDTO result = userService.saveUser(userDto);
+-
+-        assertEquals(userDto, result);
+-
+-
+-
+-
+-    }
+-
+-
+-    @Test
+-    void updateUser_givenADtoAndAUsernameToSearchFor_shouldUpdateWithCorrectValues() {
+-        String username = "testuser";
+-        long userId = 1L;
+-        UserDTO userDto = new UserDTO(userId, username, "newpassword");
+-        User user = new User(userId, username, "oldpassword");
+-        when(userRepository.findById(userId)).thenReturn(Optional.of(user));
+-        when(userRepository.save(user)).thenReturn(user);
+-
+-        userService.updateUser(userDto);
+-
+-        assertEquals(username, user.getUsername());
+-        assertEquals("newpassword", user.getPassword());
+-    }
+-
+-    @Test
+-    void deleteUser_givenAnExistingUser_shouldDeleteFromDb() {
+-        User user = new User(1L, "username", "password");
+-        UserDTO userDto = new UserDTO(1L, "username", "newpassword");
+-        when(userRepository.findById(user.getId())).thenReturn(Optional.of(user));
+-
+-        userService.deleteUser(userDto);
+-
+-        verify(userRepository).findById(user.getId());
+-        verify(userRepository).delete(user);
+-    }
+-
+-    @Test
+-    void deleteProduct_givenAnNonexistentProduct_shouldThrowException() {
+-        UserDTO userDTO = new UserDTO(1L, "username", "password");
+-        when(userRepository.findById(userDTO.getIdDto())).thenReturn(Optional.empty());
+-
+-        assertThrows(IllegalArgumentException.class,()->userService.deleteUser(userDTO));
+-
+-        verify(userRepository).findById(1L);
+-        verifyNoMoreInteractions(userRepository);
+-    }
+-
+-    @Test
+-    void getAllUsers_shouldReturnListOfUsers() {
+-        List<User> userList = Arrays.asList(
+-                new User(1L, "testuser1", "password1"),
+-                new User(2L, "testuser2", "password2")
+-        );
+-
+-        when(userRepository.findAll()).thenReturn(userList);
+-
+-        List<UserDTO> result = userService.getAllUsers();
+-
+-        assertEquals(2, result.size());
+-        assertEquals(userList.get(0).getUsername(), result.get(0).getUsernameDto());
+-        assertEquals(userList.get(0).getPassword(), result.get(0).getPasswordDto());
+-        assertEquals(userList.get(1).getUsername(), result.get(1).getUsernameDto());
+-        assertEquals(userList.get(1).getPassword(), result.get(1).getPasswordDto());
+-    }
+-
+-    @Test
+-    void getUserById_givenAnId_shouldReturnUser() {
+-        long id = 1L;
+-        User user = new User(id, "testuser", "password");
+-
+-        when(userRepository.findById(id)).thenReturn(Optional.of(user));
+-
+-        UserDTO result = userService.getUserById(id);
+-
+-        assertEquals(user.getUsername(), result.getUsernameDto());
+-        assertEquals(user.getPassword(), result.getPasswordDto());
+-    }
+-
+-    @Test
+-    void getUserById_givenNonExistentId_shouldThrowException() {
+-        long id = 1L;
+-
+-        when(userRepository.findById(id)).thenReturn(Optional.empty());
+-
+-        assertThrows(IllegalArgumentException.class, () -> userService.getUserById(id));
+-    }
+-}
+-
+Index: ProiectPS/src/main/java/com/example/ProiectPS/mappers/UserMapper.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/UserMapper.java b/ProiectPS/src/main/java/com/example/ProiectPS/mappers/UserMapper.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/UserMapper.java	
++++ /dev/null	
+@@ -1,29 +0,0 @@
+-package com.example.ProiectPS.mappers;
+-
+-import com.example.ProiectPS.dto.UserDTO;
+-import com.example.ProiectPS.model.User;
+-import org.mapstruct.Mapper;
+-import org.mapstruct.Mapping;
+-import org.mapstruct.Mappings;
+-import org.mapstruct.factory.Mappers;
+-
+-import java.util.List;
+-
+-@Mapper
+-public interface UserMapper {
+-
+-
+-    @Mapping(source = "user.id", target = "idDto")
+-    @Mapping(source = "user.username", target = "usernameDto")
+-    @Mapping(source = "user.password", target = "passwordDto")
+-    @Mapping(source = "user.online", target = "online")
+-    UserDTO toDTO(User user);
+-
+-
+-    @Mapping(source = "idDto", target = "id")
+-    @Mapping(source = "usernameDto", target = "username")
+-    @Mapping(source = "passwordDto", target = "password")
+-    @Mapping(source = "userDTO.online", target = "online")
+-    User toEntity(UserDTO userDTO);
+-
+-}
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	
++++ /dev/null	
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationServiceImpl.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationServiceImpl.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationServiceImpl.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationServiceImpl.java	
++++ /dev/null	
+@@ -1,107 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.ConversationDTO;
+-import com.example.ProiectPS.mappers.ConversationMapper;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.Message;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.MessageRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import org.mapstruct.factory.Mappers;
+-import org.springframework.stereotype.Service;
+-
+-import javax.persistence.EntityNotFoundException;
+-import javax.transaction.Transactional;
+-import java.util.ArrayList;
+-import java.util.Date;
+-import java.util.List;
+-import java.util.stream.Collectors;
+-
+-@Transactional
+-@Service
+-public class ConversationServiceImpl implements ConversationService {
+-
+-    private final ConversationRepository conversationRepository;
+-    private final UserRepository userRepository;
+-    private final MessageRepository messageRepository;
+-
+-    ConversationMapper mapper = Mappers.getMapper(ConversationMapper.class);
+-
+-    public ConversationServiceImpl(ConversationRepository conversationRepository, UserRepository userRepository, MessageRepository messageRepository) {
+-        this.conversationRepository = conversationRepository;
+-        this.userRepository = userRepository;
+-        this.messageRepository = messageRepository;
+-    }
+-
+-
+-    @Override
+-    public List<ConversationDTO> getAllConversations() {
+-        List<Conversation> conversations = conversationRepository.findAll();
+-        List<ConversationDTO> conversationDTOs = new ArrayList<>();
+-        for (Conversation conversation : conversations) {
+-            conversationDTOs.add(mapper.toDTO(conversation));
+-        }
+-        return conversationDTOs;
+-    }
+-
+-    @Override
+-    public ConversationDTO getConversationById(Long id) {
+-        Conversation conversation = conversationRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Conversation not found with id: " + id));
+-        return mapper.toDTO(conversation);
+-    }
+-
+-
+-    @Override
+-    public void saveConversation(ConversationDTO conversation) {
+-        List<User> users = conversation.getUsers();
+-        System.out.println("Conversation ID is "+ conversation.getId());
+-        for (User user : users) {
+-            if (!userRepository.findById(user.getId()).isPresent()) {
+-                throw new EntityNotFoundException("User with ID " + user.getId() + " not found");
+-            }
+-        }
+-        Conversation newConv = new Conversation(conversation.getId(), conversation.getUsers(),conversation.getDateStarted());
+-        newConv.setDateStarted(new Date());
+-        conversationRepository.save(newConv);
+-    }
+-
+-    @Override
+-    public void deleteConversation(ConversationDTO conversation) {
+-        Conversation conv = conversationRepository.findById(conversation.getId()).orElseThrow(() -> new EntityNotFoundException("Conversation not found with id: " + conversation.getId()));
+-        List<Message> messages = messageRepository.findAll().stream().filter(msg->msg.getConversation().equals(conv)).collect(Collectors.toList());
+-        messageRepository.deleteAll(messages);
+-        conversationRepository.delete(conv);
+-    }
+-
+-    @Override
+-    public ConversationDTO updateConversation(ConversationDTO conversation) {
+-        Conversation existingConversation = conversationRepository.findById(conversation.getId())
+-                .orElseThrow(() -> new EntityNotFoundException("Conversation not found with id: " + conversation.getId()));
+-
+-        List<User> users = conversation.getUsers();
+-        for (User user : users) {
+-            if (!userRepository.findById(user.getId()).isPresent()) {
+-                throw new EntityNotFoundException("User with ID " + user.getId() + " not found");
+-            }
+-        }
+-
+-        if (conversation.getUsers() != null)
+-            existingConversation.setUsers(conversation.getUsers());
+-        conversationRepository.save(existingConversation);
+-
+-        return mapper.toDTO(existingConversation);
+-    }
+-
+-    @Override
+-    public List<ConversationDTO> getAllConversationByUserId(Long id) {
+-        List<Conversation> conversations = conversationRepository.findAll();
+-        List<ConversationDTO> conversationDTOs = new ArrayList<>();
+-        User user = userRepository.findById(id).orElseThrow((() -> new IllegalArgumentException("Invalid user Id:" + id)));
+-
+-        for (Conversation conversation : conversations) {
+-            conversationDTOs.add(mapper.toDTO(conversation));
+-        }
+-        return conversationDTOs.stream().filter(conv -> conv.getUsers().contains(user)).collect(Collectors.toList());
+-    }
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/mappers/ConversationMapper.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/ConversationMapper.java b/ProiectPS/src/main/java/com/example/ProiectPS/mappers/ConversationMapper.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/ConversationMapper.java	
++++ /dev/null	
+@@ -1,31 +0,0 @@
+-package com.example.ProiectPS.mappers;
+-
+-import com.example.ProiectPS.dto.ConversationDTO;
+-import com.example.ProiectPS.model.Conversation;
+-import org.mapstruct.Mapper;
+-import org.mapstruct.Mapping;
+-import org.mapstruct.Mappings;
+-import org.mapstruct.factory.Mappers;
+-
+-import java.util.List;
+-
+-@Mapper
+-public interface ConversationMapper {
+-
+-
+-    @Mappings({
+-            @Mapping(source = "id", target = "id"),
+-            @Mapping(source = "users", target = "users"),
+-            @Mapping(source = "dateStarted", target = "dateStarted")
+-    })
+-    ConversationDTO toDTO(Conversation conversation);
+-
+-    @Mappings({
+-            @Mapping(source = "id", target = "id"),
+-            @Mapping(source = "users", target = "users"),
+-            @Mapping(source = "dateStarted", target = "dateStarted")
+-    })
+-    Conversation toEntity(ConversationDTO conversationDTO);
+-
+-
+-}
+Index: ProiectPS/.mvn/wrapper/maven-wrapper.properties
+===================================================================
+diff --git a/ProiectPS/.mvn/wrapper/maven-wrapper.properties b/ProiectPS/.mvn/wrapper/maven-wrapper.properties
+deleted file mode 100644
+--- a/ProiectPS/.mvn/wrapper/maven-wrapper.properties	
++++ /dev/null	
+@@ -1,18 +0,0 @@
+-# Licensed to the Apache Software Foundation (ASF) under one
+-# or more contributor license agreements.  See the NOTICE file
+-# distributed with this work for additional information
+-# regarding copyright ownership.  The ASF licenses this file
+-# to you under the Apache License, Version 2.0 (the
+-# "License"); you may not use this file except in compliance
+-# with the License.  You may obtain a copy of the License at
+-#
+-#   https://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing,
+-# software distributed under the License is distributed on an
+-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+-# KIND, either express or implied.  See the License for the
+-# specific language governing permissions and limitations
+-# under the License.
+-distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.7/apache-maven-3.8.7-bin.zip
+-wrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.1/maven-wrapper-3.1.1.jar
+Index: ProiectPS/package.json
+===================================================================
+diff --git a/ProiectPS/package.json b/ProiectPS/package.json
+deleted file mode 100644
+--- a/ProiectPS/package.json	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-{
+-  "dependencies": {
+-    "@github/webauthn-json": "^2.1.1"
+-  }
+-}
+Index: ProiectPS/package-lock.json
+===================================================================
+diff --git a/ProiectPS/package-lock.json b/ProiectPS/package-lock.json
+deleted file mode 100644
+--- a/ProiectPS/package-lock.json	
++++ /dev/null	
+@@ -1,20 +0,0 @@
+-{
+-  "name": "ProiectPS",
+-  "lockfileVersion": 3,
+-  "requires": true,
+-  "packages": {
+-    "": {
+-      "dependencies": {
+-        "@github/webauthn-json": "^2.1.1"
+-      }
+-    },
+-    "node_modules/@github/webauthn-json": {
+-      "version": "2.1.1",
+-      "resolved": "https://registry.npmjs.org/@github/webauthn-json/-/webauthn-json-2.1.1.tgz",
+-      "integrity": "sha512-XrftRn4z75SnaJOmZQbt7Mk+IIjqVHw+glDGOxuHwXkZBZh/MBoRS7MHjSZMDaLhT4RjN2VqiEU7EOYleuJWSQ==",
+-      "bin": {
+-        "webauthn-json": "dist/bin/main.js"
+-      }
+-    }
+-  }
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/dto/ConversationDTO.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/dto/ConversationDTO.java b/ProiectPS/src/main/java/com/example/ProiectPS/dto/ConversationDTO.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/dto/ConversationDTO.java	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-package com.example.ProiectPS.dto;
+-
+-import com.example.ProiectPS.model.Message;
+-import com.example.ProiectPS.model.User;
+-import lombok.AllArgsConstructor;
+-import lombok.Data;
+-import lombok.NoArgsConstructor;
+-
+-import java.util.Date;
+-import java.util.List;
+-
+-@Data
+-@NoArgsConstructor
+-@AllArgsConstructor
+-public class ConversationDTO {
+-    private Long id;
+-    private List<User> users;
+-    private Date dateStarted;
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/configurations/CorsConfig.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/CorsConfig.java b/ProiectPS/src/main/java/com/example/ProiectPS/configurations/CorsConfig.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/CorsConfig.java	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-package com.example.ProiectPS.configurations;
+-
+-import org.springframework.context.annotation.Configuration;
+-import org.springframework.web.servlet.config.annotation.CorsRegistry;
+-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+-
+-@Configuration
+-public class CorsConfig implements WebMvcConfigurer {
+-
+-
+-
+-    @Override
+-    public void addCorsMappings(CorsRegistry registry) {
+-        registry.addMapping("/**")
+-                .allowedOrigins("http://localhost:3000")
+-                .allowedMethods("GET", "POST", "PUT", "DELETE","OPTIONS")
+-                .allowedHeaders("*");
+-    }
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/mappers/MessageMapper.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/MessageMapper.java b/ProiectPS/src/main/java/com/example/ProiectPS/mappers/MessageMapper.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/mappers/MessageMapper.java	
++++ /dev/null	
+@@ -1,37 +0,0 @@
+-package com.example.ProiectPS.mappers;
+-
+-import com.example.ProiectPS.dto.MessageDTO;
+-import com.example.ProiectPS.model.Message;
+-import com.example.ProiectPS.model.User;
+-import org.mapstruct.Mapper;
+-import org.mapstruct.Mapping;
+-import org.mapstruct.Mappings;
+-import org.mapstruct.factory.Mappers;
+-
+-@Mapper
+-public interface MessageMapper {
+-
+-
+-    @Mappings({
+-            @Mapping(source = "id", target = "id"),
+-            @Mapping(source = "content", target = "content"),
+-            @Mapping(source = "dateSent",target = "dateSent"),
+-            @Mapping(source = "dateDelivered",target = "dateDelivered"),
+-            @Mapping(source = "dateViewed",target = "dateViewed")
+-    })
+-    MessageDTO toDTO(Message message);
+-
+-    @Mappings({
+-            @Mapping(source = "id", target = "id"),
+-            @Mapping(source = "content", target = "content"),
+-            @Mapping(target = "from", ignore = true),
+-            @Mapping(source = "dateSent",target = "dateSent"),
+-            @Mapping(source = "dateDelivered",target = "dateDelivered"),
+-            @Mapping(source = "dateViewed",target = "dateViewed")
+-    })
+-    Message toEntity(MessageDTO messageDTO);
+-
+-    default String map(User value){
+-        return value.getUsername();
+-    }
+-}
+Index: ProiectPS/src/main/resources/application.properties
+===================================================================
+diff --git a/ProiectPS/src/main/resources/application.properties b/ProiectPS/src/main/resources/application.properties
+deleted file mode 100644
+--- a/ProiectPS/src/main/resources/application.properties	
++++ /dev/null	
+@@ -1,20 +0,0 @@
+-#conection string pentru db
+-# => host: localhost;
+-# => port: portul pe care e configurat SQL - 3306 default;
+-# => numele bazei de date (baza de date trebuie sa existe)
+-spring.datasource.url=jdbc:mysql://localhost:3306/messDB
+-
+-#username si parola din SQL
+-spring.datasource.username=root
+-spring.datasource.password=parola12
+-
+-#dialect SQL
+-spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+-
+-#ddl => create (ca sa se poata face tabelele)
+-#ddl => update (cand nu se mai modifica structura bazei de date si vrem sa pastram datele inserate in tabele
+-spring.jpa.hibernate.ddl-auto=update
+-
+-#daca e nevoie sa schimbati portul pe care ruleaza aplicatia (8080 - port default)
+-server.port=8080
+-spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationService.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationService.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationService.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/ConversationService.java	
++++ /dev/null	
+@@ -1,16 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.ConversationDTO;
+-import org.springframework.stereotype.Component;
+-
+-import java.util.List;
+-
+-@Component
+-public interface ConversationService {
+-    List<ConversationDTO> getAllConversations();
+-    ConversationDTO getConversationById(Long id);
+-    void saveConversation(ConversationDTO conversation);
+-    void deleteConversation(ConversationDTO conversation);
+-    ConversationDTO updateConversation(ConversationDTO conversation);
+-    List<ConversationDTO> getAllConversationByUserId(Long id);
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/validators/PasswordValidator.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/validators/PasswordValidator.java b/ProiectPS/src/main/java/com/example/ProiectPS/validators/PasswordValidator.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/validators/PasswordValidator.java	
++++ /dev/null	
+@@ -1,17 +0,0 @@
+-package com.example.ProiectPS.validators;
+-
+-import java.util.regex.Matcher;
+-import java.util.regex.Pattern;
+-
+-public class PasswordValidator {
+-    private static final String PASSWORD_PATTERN =
+-            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
+-
+-    private static final Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+-
+-    public static boolean isValid(final String password) {
+-        Matcher matcher = pattern.matcher(password);
+-        return matcher.matches();
+-    }
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/exporter/TXTFileExporter.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/TXTFileExporter.java b/ProiectPS/src/main/java/com/example/ProiectPS/exporter/TXTFileExporter.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/exporter/TXTFileExporter.java	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-package com.example.ProiectPS.exporter;
+-
+-public class TXTFileExporter implements FileExporter {
+-    @Override
+-    public String exportData(Object object) {
+-        return object.toString();
+-    }
+-}
+Index: ProiectPS/src/test/java/com/example/ProiectPS/service/ConversationServiceImplTest.java
+===================================================================
+diff --git a/ProiectPS/src/test/java/com/example/ProiectPS/service/ConversationServiceImplTest.java b/ProiectPS/src/test/java/com/example/ProiectPS/service/ConversationServiceImplTest.java
+deleted file mode 100644
+--- a/ProiectPS/src/test/java/com/example/ProiectPS/service/ConversationServiceImplTest.java	
++++ /dev/null	
+@@ -1,133 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.ConversationDTO;
+-import com.example.ProiectPS.mappers.ConversationMapper;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.MessageRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import org.mapstruct.factory.Mappers;
+-import org.mockito.InjectMocks;
+-import org.mockito.Mock;
+-import org.mockito.MockitoAnnotations;
+-
+-import javax.persistence.EntityNotFoundException;
+-import java.util.*;
+-
+-import static org.junit.jupiter.api.Assertions.*;
+-import static org.mockito.ArgumentMatchers.any;
+-import static org.mockito.Mockito.verify;
+-import static org.mockito.Mockito.when;
+-
+-public class ConversationServiceImplTest {
+-
+-    @Mock
+-    private ConversationRepository conversationRepository;
+-
+-    @Mock
+-    private UserRepository userRepository;
+-
+-    @Mock
+-    private MessageRepository messageRepository;
+-
+-    private ConversationMapper mapper = Mappers.getMapper(ConversationMapper.class);
+-
+-    @InjectMocks
+-    private ConversationServiceImpl conversationService;
+-
+-    @BeforeEach
+-    public void setUp() {
+-        MockitoAnnotations.openMocks(this);
+-    }
+-
+-    @Test
+-    public void testGetAllConversations() {
+-        // given
+-        List<Conversation> conversations = new ArrayList<>();
+-        Conversation conv1 = new Conversation();
+-        Conversation conv2 = new Conversation();
+-        conversations.add(conv1);
+-        conversations.add(conv2);
+-
+-        when(conversationRepository.findAll()).thenReturn(conversations);
+-
+-        // when
+-        List<ConversationDTO> conversationDTOs = conversationService.getAllConversations();
+-
+-        // then
+-        assertEquals(2, conversationDTOs.size());
+-    }
+-
+-    @Test
+-    public void testGetConversationById() {
+-        // given
+-        Conversation conversation = new Conversation();
+-        conversation.setId(1L);
+-        conversation.setUsers(Collections.singletonList(new User()));
+-        conversation.setDateStarted(new Date());
+-
+-        when(conversationRepository.findById(1L)).thenReturn(Optional.of(conversation));
+-
+-        ConversationDTO conversationDTO = conversationService.getConversationById(1L);
+-
+-        // then
+-        assertNotNull(conversationDTO);
+-        assertEquals(conversation.getId(), conversationDTO.getId());
+-        assertEquals(conversation.getUsers().size(), conversationDTO.getUsers().size());
+-        assertEquals(conversation.getDateStarted(), conversationDTO.getDateStarted());
+-    }
+-
+-    @Test
+-    public void testGetConversationByIdNotFound() {
+-        // given
+-        when(conversationRepository.findById(1L)).thenReturn(Optional.empty());
+-
+-        assertThrows(EntityNotFoundException.class, () -> conversationService.getConversationById(1L));
+-    }
+-
+-    @Test
+-    public void testSaveConversation() {
+-        // given
+-        ConversationDTO conversationDTO = new ConversationDTO();
+-        conversationDTO.setUsers(Collections.singletonList(new User()));
+-        conversationDTO.setDateStarted(new Date());
+-
+-        Conversation conversation = mapper.toEntity(conversationDTO);
+-        conversation.setId(1L);
+-
+-        when(userRepository.findById(any())).thenReturn(Optional.of(new User()));
+-        when(conversationRepository.save(any())).thenReturn(conversation);
+-
+-
+-        conversationService.saveConversation(conversationDTO);
+-
+-        // then
+-        verify(conversationRepository).save(any(Conversation.class));
+-    }
+-
+-    @Test
+-    public void testDeleteConversation() {
+-
+-        ConversationDTO conversationDTO = new ConversationDTO();
+-        conversationDTO.setId(1L);
+-
+-        Conversation conversation = new Conversation();
+-        conversation.setId(1L);
+-        conversation.setUsers(Collections.singletonList(new User()));
+-
+-
+-        when(conversationRepository.findById(1L)).thenReturn(Optional.of(conversation));
+-        when(messageRepository.findAll()).thenReturn(new ArrayList<>());
+-
+-
+-        conversationService.deleteConversation(conversationDTO);
+-
+-    }
+-
+-
+-
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/model/Message.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/model/Message.java b/ProiectPS/src/main/java/com/example/ProiectPS/model/Message.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/model/Message.java	
++++ /dev/null	
+@@ -1,90 +0,0 @@
+-package com.example.ProiectPS.model;
+-
+-import com.sun.istack.NotNull;
+-import lombok.*;
+-import org.hibernate.annotations.OnDelete;
+-import org.hibernate.annotations.OnDeleteAction;
+-
+-import javax.persistence.*;
+-
+-import java.util.*;
+-@AllArgsConstructor
+-@NoArgsConstructor
+-@Setter
+-@Getter
+-@Builder
+-@Entity
+-public class Message {
+-    @Id
+-    @GeneratedValue
+-    private Long id;
+-
+-
+-    @ManyToOne(cascade={CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE})
+-    @NotNull
+-    private User from;
+-
+-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE})
+-    @OnDelete(action = OnDeleteAction.CASCADE)
+-    @JoinColumn(name = "conversation_id")
+-    @NotNull
+-    private Conversation conversation;
+-
+-    @NotNull
+-    private String content;
+-
+-    @NotNull
+-    private Date dateSent;
+-    private Date dateDelivered;
+-    private Date dateViewed;
+-
+-    public static class MessageBuilder {
+-        public MessageBuilder() {
+-
+-            this.dateSent = new Date();
+-            this.dateDelivered = new Date();
+-            this.dateViewed = null;
+-        }
+-
+-        public MessageBuilder id(Long id) {
+-            this.id = id;
+-            return this;
+-        }
+-
+-        public MessageBuilder from(User from) {
+-            this.from = from;
+-            return this;
+-        }
+-
+-        public MessageBuilder conversation(Conversation conversation) {
+-            this.conversation = conversation;
+-            return this;
+-        }
+-
+-        public MessageBuilder content(String content) {
+-            this.content = content;
+-            return this;
+-        }
+-
+-        public MessageBuilder dateSent(Date dateSent) {
+-            this.dateSent = dateSent;
+-            return this;
+-        }
+-
+-        public MessageBuilder dateDelivered(Date dateDelivered) {
+-            this.dateDelivered = dateDelivered;
+-            return this;
+-        }
+-
+-        public MessageBuilder dateViewed(Date dateViewed) {
+-            this.dateViewed = dateViewed;
+-            return this;
+-        }
+-
+-        public Message build() {
+-            return new Message(id, from, conversation, content, dateSent, dateDelivered, dateViewed);
+-        }
+-    }
+-
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/UserService.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/UserService.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/UserService.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/UserService.java	
++++ /dev/null	
+@@ -1,19 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.UserDTO;
+-import org.springframework.stereotype.Component;
+-
+-import java.util.List;
+-
+-@Component
+-public interface UserService {
+-    UserDTO getUserById(Long id);
+-    UserDTO saveUser(UserDTO user);
+-    void updateUser(UserDTO user);
+-    void deleteUser(UserDTO user);
+-    List<UserDTO> getAllUsers();
+-    UserDTO login(String username, String password);
+-
+-    String exportUserDetails(Long userID, String fileType);
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/configurations/WebsocketConfig.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/WebsocketConfig.java b/ProiectPS/src/main/java/com/example/ProiectPS/configurations/WebsocketConfig.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/configurations/WebsocketConfig.java	
++++ /dev/null	
+@@ -1,27 +0,0 @@
+-package com.example.ProiectPS.configurations;
+-
+-import org.springframework.context.annotation.Configuration;
+-import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+-import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
+-import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
+-import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+-
+-@Configuration
+-@EnableWebSocketMessageBroker
+-public class WebsocketConfig implements WebSocketMessageBrokerConfigurer {
+-
+-    @Override
+-    public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
+-        stompEndpointRegistry.addEndpoint("/socket")
+-                .setAllowedOrigins("http://localhost:3000")
+-                .withSockJS();
+-    }
+-
+-    @Override
+-    public void configureMessageBroker(MessageBrokerRegistry registry) {
+-        registry.enableSimpleBroker("/topic");
+-    }
+-
+-
+-
+-}
+\ No newline at end of file
+Index: ProiectPS/.gitignore
+===================================================================
+diff --git a/ProiectPS/.gitignore b/ProiectPS/.gitignore
+deleted file mode 100644
+--- a/ProiectPS/.gitignore	
++++ /dev/null	
+@@ -1,33 +0,0 @@
+-HELP.md
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
+-
+-### STS ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-
+-### IntelliJ IDEA ###
+-.idea
+-*.iws
+-*.iml
+-*.ipr
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
+-
+-### VS Code ###
+-.vscode/
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/MessageServiceImpl.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageServiceImpl.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageServiceImpl.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageServiceImpl.java	
++++ /dev/null	
+@@ -1,129 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.MessageDTO;
+-import com.example.ProiectPS.mappers.MessageMapper;
+-import com.example.ProiectPS.model.Conversation;
+-import com.example.ProiectPS.model.Message;
+-import com.example.ProiectPS.model.User;
+-import com.example.ProiectPS.repository.ConversationRepository;
+-import com.example.ProiectPS.repository.MessageRepository;
+-import com.example.ProiectPS.repository.UserRepository;
+-import org.mapstruct.factory.Mappers;
+-import org.springframework.stereotype.Service;
+-
+-import javax.persistence.EntityNotFoundException;
+-import java.util.*;
+-import java.util.stream.Collectors;
+-
+-@Service
+-public class MessageServiceImpl implements MessageService {
+-
+-    private final MessageRepository messageRepository;
+-    private final ConversationRepository conversationRepository;
+-    private final UserRepository userRepository;
+-    MessageMapper mapper = Mappers.getMapper(MessageMapper.class);
+-
+-    public MessageServiceImpl(MessageRepository messageRepository, ConversationRepository conversationRepository, UserRepository userRepository) {
+-        this.messageRepository = messageRepository;
+-        this.conversationRepository = conversationRepository;
+-        this.userRepository = userRepository;
+-    }
+-
+-
+-    @Override
+-    public List<MessageDTO> getAllMessages() {
+-        List<Message> messages = messageRepository.findAll();
+-        List<MessageDTO> messageDTOS = new ArrayList<>();
+-        for (Message message : messages) {
+-            messageDTOS.add(mapper.toDTO(message));
+-        }
+-        return messageDTOS;
+-    }
+-
+-    @Override
+-    public MessageDTO getMessageById(Long id) {
+-        Message message = messageRepository.findById(id).orElse(null);
+-        return mapper.toDTO(message);
+-    }
+-
+-    @Override
+-    public MessageDTO sendMessage(MessageDTO messageDTO, Long fromId, Long conversationId) throws IllegalArgumentException {
+-
+-
+-        User user = userRepository.findById(fromId).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + fromId));
+-        Conversation conversation = conversationRepository.findById(conversationId) .orElseThrow(() -> new EntityNotFoundException("Conversation not found with id: " + conversationId));
+-        if(!conversation.getUsers().contains(user)){
+-            throw new IllegalArgumentException("User is not part of this conversation");
+-        }
+-
+-        Message message = Message.builder()
+-                .id(messageDTO.getId())
+-                .from(user)
+-                .conversation(conversation)
+-                .content(messageDTO.getContent())
+-                .build();
+-
+-        messageRepository.save(message);
+-        return mapper.toDTO(message);
+-    }
+-
+-    @Override
+-    public void sendMessageToUser(MessageDTO messageDTO, Long fromId, Long toId) {
+-
+-        User user1 = userRepository.findById(fromId).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + fromId));
+-        User user2 = userRepository.findById(toId).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + toId));
+-        List<Conversation> conversations;
+-         conversations = conversationRepository.findAll().stream().filter(conv->conv.getUsers().contains(user1)&&conv.getUsers().contains(user2)&&conv.getUsers().size()==2).limit(1).collect(Collectors.toList());
+-        Conversation conversation;
+-        if(conversations.size()<1) {
+-            conversation = Conversation.between(Arrays.asList(user1, user2));
+-            conversationRepository.save(conversation);
+-        }
+-         else {
+-            conversation = conversations.get(0);
+-        }
+-
+-         if (messageDTO.getContent()!= null){
+-             Message message = Message.builder()
+-                     .id(messageDTO.getId())
+-                     .from(user1)
+-                     .conversation(conversation)
+-                     .content(messageDTO.getContent())
+-                     .build();
+-
+-             messageRepository.save(message);
+-         }
+-
+-
+-    }
+-
+-    @Override
+-    public void updateMessage(MessageDTO messageDTO) {
+-        Message message = messageRepository.findById(messageDTO.getId())
+-                .orElseThrow(() -> new IllegalArgumentException("Invalid message Id:" + messageDTO.getId()));
+-
+-        if(messageDTO.getContent()!=null)
+-        message.setContent(messageDTO.getContent());
+-
+-        message.setDateViewed(new Date());
+-        messageRepository.save(message);
+-    }
+-
+-    @Override
+-    public void deleteMessage(MessageDTO messageDTO) {
+-        Message message = messageRepository.findById(messageDTO.getId()).orElseThrow(() -> new IllegalArgumentException("Invalid message Id:" + messageDTO.getId()));
+-        messageRepository.delete(message);
+-    }
+-
+-    @Override
+-    public List<MessageDTO> getAllMessagesByConversationId(Long conversationId) {
+-        List<MessageDTO> messageDTOs = new ArrayList<>();
+-        Conversation conversation = conversationRepository.findById(conversationId).orElseThrow(() -> new EntityNotFoundException("Conversation not found with id: " + conversationId));
+-        List<Message> messages = messageRepository.findAll().stream().filter(msg -> msg.getConversation().equals(conversation)).collect(Collectors.toList());
+-
+-        for (Message message : messages) {
+-            messageDTOs.add(mapper.toDTO(message));
+-        }
+-        return messageDTOs;
+-    }
+-}
+Index: .idea/ProiectPS.iml
+===================================================================
+diff --git a/.idea/ProiectPS.iml b/.idea/ProiectPS.iml
+deleted file mode 100644
+--- a/.idea/ProiectPS.iml	
++++ /dev/null	
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/ProiectPS/src/main/java" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: ProiectPS/src/main/java/com/example/ProiectPS/model/User.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/model/User.java b/ProiectPS/src/main/java/com/example/ProiectPS/model/User.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/model/User.java	
++++ /dev/null	
+@@ -1,35 +0,0 @@
+-package com.example.ProiectPS.model;
+-
+-import com.sun.istack.NotNull;
+-import lombok.*;
+-
+-import javax.persistence.*;
+-import javax.xml.bind.annotation.XmlAccessType;
+-import javax.xml.bind.annotation.XmlAccessorType;
+-import javax.xml.bind.annotation.XmlRootElement;
+-
+-@AllArgsConstructor
+-@NoArgsConstructor
+-@Setter
+-@Getter
+-@Entity
+-@Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
+-@XmlRootElement(name="user")
+-@XmlAccessorType(XmlAccessType.FIELD)
+-@ToString
+-public class User {
+-    @Id
+-    @GeneratedValue
+-    private Long id;
+-    @NotNull
+-    @Column(unique = true)
+-    private String username;
+-    private String password;
+-    private Boolean online;
+-
+-
+-
+-
+-
+-
+-}
+Index: ProiectPS/src/main/java/com/example/ProiectPS/service/MessageService.java
+===================================================================
+diff --git a/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageService.java b/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageService.java
+deleted file mode 100644
+--- a/ProiectPS/src/main/java/com/example/ProiectPS/service/MessageService.java	
++++ /dev/null	
+@@ -1,23 +0,0 @@
+-package com.example.ProiectPS.service;
+-
+-import com.example.ProiectPS.dto.MessageDTO;
+-import org.springframework.stereotype.Component;
+-
+-import java.util.List;
+-
+-@Component
+-public interface MessageService {
+-
+-    List<MessageDTO> getAllMessages();
+-
+-    MessageDTO getMessageById(Long id);
+-
+-    MessageDTO sendMessage(MessageDTO messageDTO, Long fromId, Long conversationId) throws IllegalArgumentException ;
+-    void sendMessageToUser(MessageDTO messageDTO,Long fromId,Long toId);
+-
+-    void updateMessage(MessageDTO messageDTO);
+-
+-    void deleteMessage(MessageDTO messageDTO);
+-
+-    List<MessageDTO> getAllMessagesByConversationId(Long conversationId);
+-}
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Encoding\">\r\n    <file url=\"file://$PROJECT_DIR$/ProiectPS/src/main/java\" charset=\"UTF-8\" />\r\n    <file url=\"file://$PROJECT_DIR$/ProiectPS/src/main/resources\" charset=\"UTF-8\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+--- a/.idea/encodings.xml	
++++ b/.idea/encodings.xml	
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/ProiectPS/src/main/java" charset="UTF-8" />
+-    <file url="file://$PROJECT_DIR$/ProiectPS/src/main/resources" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/ProiectPS/ProiectPS (1) (com.example).iml\" filepath=\"$PROJECT_DIR$/ProiectPS/ProiectPS (1) (com.example).iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	
++++ b/.idea/modules.xml	
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/ProiectPS/ProiectPS (1) (com.example).iml" filepath="$PROJECT_DIR$/ProiectPS/ProiectPS (1) (com.example).iml" />
++      <module fileurl="file://$PROJECT_DIR$/MessengerApp.iml" filepath="$PROJECT_DIR$/MessengerApp.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <annotationProcessing>\r\n      <profile default=\"true\" name=\"Default\" enabled=\"true\" />\r\n      <profile name=\"Maven default annotation processors profile\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n      </profile>\r\n      <profile name=\"Annotation profile for ProiectPS\" enabled=\"true\">\r\n        <sourceOutputDir name=\"target/generated-sources/annotations\" />\r\n        <sourceTestOutputDir name=\"target/generated-test-sources/test-annotations\" />\r\n        <outputRelativeToContentRoot value=\"true\" />\r\n        <processorPath useClasspath=\"false\">\r\n          <entry name=\"$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.3.Final/mapstruct-processor-1.5.3.Final.jar\" />\r\n          <entry name=\"$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.3.Final/mapstruct-1.5.3.Final.jar\" />\r\n          <entry name=\"$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar\" />\r\n          <entry name=\"$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar\" />\r\n        </processorPath>\r\n        <module name=\"ProiectPS (1) (com.example)\" />\r\n      </profile>\r\n    </annotationProcessing>\r\n    <bytecodeTargetLevel>\r\n      <module name=\"ProiectPS\" target=\"1.5\" />\r\n      <module name=\"ProiectPS (1) (com.example)\" target=\"1.8\" />\r\n    </bytecodeTargetLevel>\r\n  </component>\r\n  <component name=\"JavacSettings\">\r\n    <option name=\"ADDITIONAL_OPTIONS_OVERRIDE\">\r\n      <module name=\"ProiectPS (1) (com.example)\" options=\"-parameters\" />\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	
++++ b/.idea/compiler.xml	
+@@ -8,7 +8,7 @@
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+       </profile>
+-      <profile name="Annotation profile for ProiectPS" enabled="true">
++      <profile name="Annotation profile for MessengerApp" enabled="true">
+         <sourceOutputDir name="target/generated-sources/annotations" />
+         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+         <outputRelativeToContentRoot value="true" />
+@@ -18,17 +18,16 @@
+           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
+         </processorPath>
+-        <module name="ProiectPS (1) (com.example)" />
++        <module name="MessengerApp" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel>
+-      <module name="ProiectPS" target="1.5" />
+-      <module name="ProiectPS (1) (com.example)" target="1.8" />
++      <module name="MessengerApp" target="1.8" />
+     </bytecodeTargetLevel>
+   </component>
+   <component name="JavacSettings">
+     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+-      <module name="ProiectPS (1) (com.example)" options="-parameters" />
++      <module name="MessengerApp" options="-parameters" />
+     </option>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/ProiectPS/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"corretto-11\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"jpab\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -3,11 +3,11 @@
+   <component name="MavenProjectsManager">
+     <option name="originalFiles">
+       <list>
+-        <option value="$PROJECT_DIR$/ProiectPS/pom.xml" />
++        <option value="$PROJECT_DIR$/pom.xml" />
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+   <component name="ProjectType">
+     <option name="id" value="jpab" />
+   </component>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$/..\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	
++++ b/.idea/vcs.xml	
+@@ -1,6 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/MessengerApp" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
